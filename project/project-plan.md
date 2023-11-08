@@ -35,7 +35,8 @@ Short description of the DataSource.
 
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
-1. Data Collection and Preprocessing [#1][i1]
-2. Sentiment Analysis Model Development [#2][i2]
+1. Data Collection and Preprocessing 
+2. Sentiment Analysis Model Development 
+3. Data Integration
+4. Correlation Analysis
 
-[i1]: https://github.com/jvalue/made-template/issues/1
