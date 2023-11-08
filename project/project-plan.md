@@ -24,12 +24,14 @@ Our aims to investigate the intricate relationship between Bitcoin's historical 
 * Data URL: https://www.kaggle.com/datasets/gautamchettiar/bitcoin-sentiment-analysis-twitter-data/download?datasetVersionNumber=1
 * Data Type: CSV
 
+Perform sentiment analysis on Bitcoin-related tweets, excluding rudimentary text preprocessing and the sentiment polarity score, while utilizing multi-modal data for enhanced functionality, with the final column serving as the classifier.
+
 ### Datasource2: Bitcoin Price (2014-2023)
 * Metadata URL: https://www.kaggle.com/datasets/arslanr369/bitcoin-price-2014-2023
 * Data URL: https://www.kaggle.com/datasets/arslanr369/bitcoin-price-2014-2023/download?datasetVersionNumber=1
 * Data Type: CSV
 
-Short description of the DataSource.
+The Yahoo Finance Bitcoin Historical Data, covering 2014 to 2023, offers a decade-long record of Bitcoin's price, providing rich insights for enthusiasts, analysts, researchers, and traders in the dynamic cryptocurrency landscape.
 
 ## Work Packages
 
