@@ -37,8 +37,12 @@ The Yahoo Finance Bitcoin Historical Data, covering 2014 to 2023, offers a decad
 
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
-1. Data Collection and Preprocessing [#1]
-2. Sentiment Analysis Model Development [#2]
-3. Data Integration [#3]
-4. Correlation Analysis [#4]
+1. Data Collection and Preprocessing [#1] [i1]
+2. Sentiment Analysis Model Development [#2] [i2]
+3. Data Integration [#3] [i3]
+4. Correlation Analysis [#4] [i4]
 
+[i1]: https://github.com/BIJAYS09/made-template/issues/1
+[i2]: https://github.com/BIJAYS09/made-template/issues/2
+[i3]: https://github.com/BIJAYS09/made-template/issues/3
+[i4]: https://github.com/BIJAYS09/made-template/issues/4
