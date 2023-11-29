@@ -12,15 +12,15 @@ df = df.drop(df[(df.Breite < -90) & (df.Breite > 90)].index)
 def isValid_IFOPT(value):
     if pd.isnull(value):
         return False
-    parts = value.split(":")
-    if len(parts) < 3:
+    data = value.split(":")
+    if len(data) < 3:
         return False
-    if len(parts) >= 3 :
-        first_part = parts[0]
-        if len(first_part) !=2:
+    else:
+        col1 = data[0]
+        if len(col1) !=2:
             return False
-        for part in parts[1:]:
-            if not part.isdigit():
+        for reaminig_data in data[1:]:
+            if not reaminig_data.isdigit():
                 return False
     return True
 
@@ -39,7 +39,6 @@ data_types = {
     "Betreiber_Name": TEXT,  
     "Betreiber_Nr": INTEGER 
 }
-
 
 df.to_sql("trainstops", sqlite_engine, if_exists="replace", index=False, dtype=data_types)
 
