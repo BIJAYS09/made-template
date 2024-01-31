@@ -52,7 +52,7 @@ pipeline GtfsPipeline {
     }
 
     block StopsTableInterpreter oftype TableInterpreter {
-        header: false;
+        header: true;
         columns:[
             "stop_id" oftype integer,
             "stop_name" oftype text,
