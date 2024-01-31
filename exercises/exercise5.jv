@@ -23,7 +23,32 @@ pipeline GtfsPipeline {
 
     block StopsTextFileInterpreter oftype TextFileInterpreter { }
     block StopsCSVInterpreter oftype CSVInterpreter {
-        delimiter: ",";
+        enclosing: '"';
+    }
+
+    valuetype validZoneid oftype integer {
+        constraints: [ZoneidConstraint];
+    }
+
+    valuetype validLat oftype decimal {
+        constraints: [LatConstraint];
+    }
+
+    valuetype validLong oftype decimal {
+        constraints: [LongConstraint];
+    }
+
+    constraint ZoneidConstraint on integer: 
+        value == 2001;
+
+    constraint LatConstraint oftype RangeConstraint {
+        lowerBound: -90;
+        upperBound: 90;
+    }
+
+    constraint LongConstraint oftype RangeConstraint {
+        lowerBound: -90;
+        upperBound: 90;
     }
 
     block StopsTableInterpreter oftype TableInterpreter {
