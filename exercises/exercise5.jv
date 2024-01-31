@@ -1,19 +1,19 @@
 pipeline GtfsPipeline {
 
-    GTFSSampleFeedExtractor -> ZipArchiveInterpreter;
+    GTFSExtractor -> ZipInterpreter;
 
-    ZipArchiveInterpreter
+    ZipInterpreter
         -> StopsFilePicker 
         -> StopsTextFileInterpreter
         -> StopsCSVInterpreter 
         -> StopsTableInterpreter 
         -> StopsLoader;
 
-    block GTFSSampleFeedExtractor oftype HttpExtractor {
+    block GTFSExtractor oftype HttpExtractor {
         url: "https://gtfs.rhoenenergie-bus.de/GTFS.zip";
     }
 
-    block ZipArchiveInterpreter oftype ArchiveInterpreter {
+    block ZipInterpreter oftype ArchiveInterpreter {
         archiveType: "zip";
     }
 
@@ -22,10 +22,12 @@ pipeline GtfsPipeline {
     }
 
     block StopsTextFileInterpreter oftype TextFileInterpreter { }
-    block StopsCSVInterpreter oftype CSVInterpreter { }
+    block StopsCSVInterpreter oftype CSVInterpreter {
+        delimiter: ",";
+    }
 
     block StopsTableInterpreter oftype TableInterpreter {
-        header: true;
+        header: false;
         columns:[
             "stop_id" oftype text,
             "stop_name" oftype text,
