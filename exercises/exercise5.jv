@@ -26,27 +26,27 @@ pipeline GtfsPipeline {
         enclosing: '"';
     }
 
-    valuetype validZoneid oftype integer {
-        constraints: [ZoneidConstraint];
+    valuetype isValidZoneid oftype integer {
+        constraints: [ZoneIdConstraint];
     }
 
-    valuetype validLat oftype decimal {
-        constraints: [LatConstraint];
+    valuetype isValidLat oftype decimal {
+        constraints: [LatitudeConstraint];
     }
 
-    valuetype validLong oftype decimal {
-        constraints: [LongConstraint];
+    valuetype isValidLong oftype decimal {
+        constraints: [LongitudeConstraint];
     }
 
-    constraint ZoneidConstraint on integer: 
-        value == 2001;
+    constraint ZoneIdConstraint on integer: 
+    value == 2001;
 
-    constraint LatConstraint oftype RangeConstraint {
+    constraint LatitudeConstraint oftype RangeConstraint {
         lowerBound: -90;
         upperBound: 90;
     }
 
-    constraint LongConstraint oftype RangeConstraint {
+    constraint LongitudeConstraint oftype RangeConstraint {
         lowerBound: -90;
         upperBound: 90;
     }
@@ -54,11 +54,11 @@ pipeline GtfsPipeline {
     block StopsTableInterpreter oftype TableInterpreter {
         header: false;
         columns:[
-            "stop_id" oftype text,
+            "stop_id" oftype integer,
             "stop_name" oftype text,
-            "stop_lat" oftype text,
-            "stop_lon" oftype text,
-            "zone_id" oftype text,
+            "stop_lat" oftype isValidLat,
+            "stop_lon" oftype isValidLong,
+            "zone_id" oftype isValidZoneid,
         ];
     }
 
